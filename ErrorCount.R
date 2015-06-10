@@ -5,7 +5,7 @@ Dir<-getwd()
 #set working directory to the input directory
 setwd(directory)
 
-#Pass the file names to list files
+#Pass the file names to files
 files <- list.files(directory)
 
 #Identify end value used in for loop
@@ -18,7 +18,7 @@ filtersReprimed<-c()
 ERR<-"ERR"
 IND<-"IND"
 
-#Perform logic clauses to identify if searching for an Error code of an Indeterminate. 
+#Perform logic clauses to identify if searching for an Error code or an Indeterminate. 
 x<-charmatch(ERR, searchString, nomatch = 0)
 y<-charmatch(IND, searchString, nomatch = 0)
 
@@ -58,7 +58,7 @@ if (x == 1){
 	total_filters_reprimed<-sum(filtersReprimed)
 	sprintf("Error Code: %s   Raw count: %03d   Re-Prime count: %03d   Filters Re-primed: %04d",ErrorString, finalRaw, finalReprime,total_filters_reprimed)
 	
-} else if(y == 1){
+} else if(y == 1){   #following code is either identical or similar to above IF section
 	INDString<-searchString
 	for(i in 1:length){
 	
